@@ -1,0 +1,34 @@
+* {
+  font-family: Raleway;
+}
+body {
+background-color: #9B988B;
+}
+.jumbotron {
+  background-color: #6B0A00;
+  color: #FFF9D4;
+  text-align: center;
+}
+#content {
+  margin-top: 75px;
+}
+#faces {
+  margin-top: 75px;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 75px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #222222;
+  color: #FFFFFF;
+}
