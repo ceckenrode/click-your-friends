@@ -3,6 +3,12 @@
 }
 body {
 background-color: #9B988B;
+/* Margin bottom by footer height */
+margin-bottom: 75px;
+}
+html {
+  position: relative;
+  min-height: 100%;
 }
 .jumbotron {
   background-color: #6B0A00;
@@ -29,14 +35,7 @@ background-color: #9B988B;
   height: 150px;
   margin: 10px auto;
 }
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 75px;
-}
+
 .footer {
   position: absolute;
   bottom: 0;
