@@ -8,12 +8,18 @@ background-color: #9B988B;
   background-color: #6B0A00;
   color: #FFF9D4;
   text-align: center;
+  margin-top: -22px;
 }
 #content {
   margin-top: 75px;
 }
 #faces {
   margin-top: 75px;
+}
+.friends {
+  width: 150px;
+  height: 150px;
+  margin: 10px auto;
 }
 html {
   position: relative;
