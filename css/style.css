@@ -46,3 +46,20 @@ body {
   background-color: #222222;
   color: #FFFFFF;
 }
+.footerText {
+  font-size: 12pt;
+  margin-top: 20px;
+}
+
+.footerText{
+  font-size: 12pt;
+  margin-top: 20px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.footerText a:link, .footerText a:visited, .footerText a:hover, .footerText a:active{
+  color: #FFFFFF;
+  text-decoration: none;
+
+}
