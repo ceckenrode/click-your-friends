@@ -9,6 +9,14 @@ background-color: #9B988B;
   color: #FFF9D4;
   text-align: center;
   margin-top: -22px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+#start {
+  margin-top: 10px;
+  background-color: #222222;
+  border: white;
+  color: #02E148;
 }
 #content {
   margin-top: 75px;
