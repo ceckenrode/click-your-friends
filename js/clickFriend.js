@@ -6,6 +6,7 @@ var elem = document.getElementById("start");
 function change()
 {
   started = true;
+  
   var timer = setInterval(function(){countDown()}, 1000);
   setTimeout(function() {clearInterval(timer);}, 21000);
   setTimeout(function(){restart()}, 21000);
@@ -13,12 +14,19 @@ function change()
 
 function countDown() {
  if (started === true) {
-  elem.onclick = function(){nothing();}; ;
+  elem.onclick = "#" ;
 }
   if (elem.text === "Start Timer" || elem.text === "Play Again?") {
+  elem.style.color = "#02E148";
   elem.text = "20"; 
 } else if (elem.text > 0) {
   elem.text--;
+  if (elem.text < 15 && elem.text > 10){
+    elem.style.color = "#E56414";
+  }
+  else if (elem.text < 6) {
+    elem.style.color = "red";
+  }
 } 
 }
 
@@ -28,6 +36,6 @@ function restart() {
   //started = false;
 }
 
-function nothing () {
+//function nothing () {
 
-}
+//}
