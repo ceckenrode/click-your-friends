@@ -4,8 +4,10 @@ var elem = document.getElementById("start");
 var score = 0;
 var friends = document.getElementsByClassName("friends");
  for(var i=0;i<friends.length;i++){
-        friends[i].addEventListener('click', increaseScore, false);
+        friends[i].removeEventListener('click', decreaseTime, false);
     }
+    score = 0;
+
 
 function startGame() {
   if (started === false) {
@@ -13,6 +15,9 @@ function startGame() {
     if (started === true) {
       elem.text = "Start Timer";
       countDown();
+       for(var i=0;i<friends.length;i++){
+        friends[i].addEventListener('click', increaseScore, false);
+    }
     }
   }
 }
@@ -39,20 +44,25 @@ function countDown() {
 }
 
 function increaseScore(){
+  if (started == true){
   score++;
   this.removeEventListener("click", increaseScore, false);
   this.addEventListener("click", decreaseTime, false);
+} else {
+  //do nothing
+}
 }
 
 function reInitialize() {
   var friends = document.getElementsByClassName("friends");
+  for(var i=0;i<friends.length;i++){
+        friends[i].removeEventListener('click', decreaseTime, false);
+    }
  for(var i=0;i<friends.length;i++){
         friends[i].addEventListener('click', increaseScore, false);
    
     }
-    for(var i=0;i<friends.length;i++){
-        friends[i].removeEventListener('click', decreaseTime, false);
-    }
+    
     score = 0;
 }
 
@@ -63,7 +73,10 @@ function decreaseTime() {
 
 }
 
-/* function shuffle(array) {
+
+ function shuffle(array) {
+  console.log("shuffled");
+  console.log(friends);
     var counter = array.length, temp, index;
 
     // While there are elements in the array
@@ -82,19 +95,3 @@ function decreaseTime() {
 
     return array;
 }
-
-function swapElements(arr) {
-    // create marker element and insert it where obj1 is
-    var temp = document.createElement("div");
-    obj1.parentNode.insertBefore(temp, obj1);
-
-    // move obj1 to right before obj2
-    obj2.parentNode.insertBefore(obj1, obj2);
-
-    // move obj2 to right before where obj1 used to be
-    temp.parentNode.insertBefore(obj2, temp);
-
-    // remove temporary marker node
-    temp.parentNode.removeChild(temp);
-}
-*/
