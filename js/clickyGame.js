@@ -1,13 +1,19 @@
+/* Adding a click event event listener to the start button that calls the startGame function
+   declaring and intializing the started variable as false. Setting the variable elem to an array
+   returned by document.getElementsByClassName("friends"). Then intializing the score to be 0. */
+
 document.getElementById("start").addEventListener("click", startGame);
 var started = false;
 var elem = document.getElementById("start");
 var score = 0;
 var friends = document.getElementsByClassName("friends");
- for(var i=0;i<friends.length;i++){
-        friends[i].removeEventListener('click', decreaseTime, false);
-    }
-    score = 0;
+var score = 0;
+//------------------------/endOf-Global Variables--------------------------------------------------------------
 
+
+/* The first function called. If the game is not started, it is set to started now. If the game is started,
+   we start the countDown() function. We also set event listeners for every element in the friends array to
+   call the increaseScore function when clicked. */
 
 function startGame() {
   if (started === false) {
@@ -21,6 +27,13 @@ function startGame() {
     }
   }
 }
+//--------------------/endOf-startGame()-----------------------------------------------------------------------
+
+/* If the timer is not started yet, we make sure the color is green. When pressed, we set the timer to 20, and then 
+   call the countdown function recursively with a timer of 1 second each. On the next call the first else if statement is executed decrementing the
+   value of elem.text by 1. We recall countdown() until we reach 0. Changing colors of the elem.text as we get to certain
+   amounts. Once we get to 0, we change the text to "Play Again" on the next recursive call, make sure the text color is red, set 
+   the started boolean to false, alert the user of their score, and call the reInitialize function.*/
 
 function countDown() {
   if (elem.text === "Start Timer") {
@@ -37,11 +50,17 @@ function countDown() {
     }
   } else if (elem.text === "0"){
     elem.text = "Play Again?";
+    elem.style.color = "red";
     started = false;
     alert("Your Score is " + score);
     reInitialize();
   }
 }
+//-----------------/endOf-countDown()---------------------------------------------------------------------------
+
+/* If the game is started, and a picture is clicked with the increaseScore event listener, we increase the score by one.
+   Then we remove the increaseScore event listener from this item, and add the decreaseTime event listener which will 
+   decrease the time remaining if the user clicks a picture twice.  */
 
 function increaseScore(){
   if (started == true){
@@ -52,6 +71,9 @@ function increaseScore(){
   //do nothing
 }
 }
+//-----------------/endOf-increaseScore()-----------------------------------------------------------------------
+
+/* Sets the game up to be played again. Resets all event listeners, sets score back to 0. */
 
 function reInitialize() {
   var friends = document.getElementsByClassName("friends");
@@ -65,6 +87,10 @@ function reInitialize() {
     
     score = 0;
 }
+//----------------/endOf-reInitialize()-------------------------------------------------------------------------
+
+/* This function is called if a user clicks an image twice in the same game. If there is enough time to spare, we 
+subtract three seconds. */
 
 function decreaseTime() {
   if (elem.text >= 3) {
@@ -72,26 +98,4 @@ function decreaseTime() {
   }
 
 }
-
-
- function shuffle(array) {
-  console.log("shuffled");
-  console.log(friends);
-    var counter = array.length, temp, index;
-
-    // While there are elements in the array
-    while (counter > 0) {
-        // Pick a random index
-        index = Math.floor(Math.random() * counter);
-
-        // Decrease counter by 1
-        counter--;
-
-        // And swap the last element with it
-        temp = array[counter];
-        array[counter] = array[index];
-        array[index] = temp;
-    }
-
-    return array;
-}
+//---------------/endOf-decreaseTime()--------------------------------------------------------------------------

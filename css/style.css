@@ -3,7 +3,6 @@
 }
 body {
 background-color: #9B988B;
-/* Margin bottom by footer height */
 margin-bottom: 75px;
 }
 html {
@@ -40,7 +39,6 @@ html {
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
   height: 60px;
   background-color: #222222;
   color: #FFFFFF;
