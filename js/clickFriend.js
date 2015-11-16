@@ -1,17 +1,18 @@
 var started = false;
 var elem = document.getElementById("start");
-
-
+document.getElementById("start").addEventListener("click", change);
+​
+​
 function change() {
   started = true;
-
+​
   var timer = setInterval(function() {
     countDown()
   }, 1000);
   setTimeout(function() {clearInterval(timer);}, 21000);
   setTimeout(function() {restart();}, 21000);
 }
-
+​
 function countDown() {
   if (started === true) {
     elem.onclick = "#";
@@ -28,9 +29,10 @@ function countDown() {
     }
   }
 }
-
+​
 function restart() {
   elem.text = "Play Again?";
   started = false;
   elem.onclick = function() {change(); };
 }
+1 Comment C
