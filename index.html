@@ -48,36 +48,41 @@
     <div class="container">
       <h1>Start the timer and see how many friends you can click in 20 seconds!</h1>
       <h3>(You only get points for individual clicks and you lose 3 seconds for clicking someone twice!)</h3>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button" id="start">Start Timer</a></p>
+      <p><a class="btn btn-primary btn-lg" role="button" id="start">Start Timer</a></p>
     </div>
   </div>
+  <div class="alert alert-success">
+  <h4>
+  <strong>Score: <span id="score"></span> </strong>
+  </h4>
+</div>
 
   <!-- Begin page content -->
   <div class="container" id="faces">
     
-      <div class="col-xs-6 col-sm-3 col-xs-6 col-sm-3 col-md-2 col-md-offset-1 col"><img src="friendImages/albert.png" class="friends img-responsive"></div>
-      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/alex.png" class="friends img-responsive"></div>
-      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/carolyn.png" class="friends img-responsive"></div>
-      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/cb.png" class="friends img-responsive"></div>
-      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/chrisC.png" class="friends img-responsive"></div>
+      <div class="col-xs-6 col-sm-3 col-xs-6 col-sm-3 col-md-2 col-md-offset-1 col"><img src="friendImages/albert.png" class="friends img-responsive" data-state="unclicked"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/alex.png" class="friends img-responsive" data-state="unclicked"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/carolyn.png" class="friends img-responsive" data-state="unclicked"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/cb.png" class="friends img-responsive" data-state="unclicked"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/chrisC.png" class="friends img-responsive" data-state="unclicked"></div>
      
-      <div class="col-xs-6 col-sm-3 col-md-2 col-md-offset-1"><img src="friendImages/chrisD.png" class="friends img-responsive"></div>
-      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/dan.png" class="friends img-responsive"></div>
-      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/danV.png" class="friends img-responsive"></div>
-      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/darryl.png" class="friends img-responsive"></div>
-      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/james.png" class="friends img-responsive"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2 col-md-offset-1"><img src="friendImages/chrisD.png" class="friends img-responsive" data-state="unclicked"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/dan.png" class="friends img-responsive" data-state="unclicked"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/danV.png" class="friends img-responsive" data-state="unclicked"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/darryl.png" class="friends img-responsive" data-state="unclicked"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/james.png" class="friends img-responsive" data-state="unclicked"></div>
       
-      <div class="col-xs-6 col-sm-3 col-md-2 col-md-offset-1"><img src="friendImages/jed.png" class="friends img-responsive"></div>
-      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/jeremy.png" class="friends img-responsive"></div>
-      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/mathew.png" class="friends img-responsive"></div>
-      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/mike.png" class="friends img-responsive"></div>
-      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/paul.png" class="friends img-responsive"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2 col-md-offset-1"><img src="friendImages/jed.png" class="friends img-responsive" data-state="unclicked"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/jeremy.png" class="friends img-responsive" data-state="unclicked"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/mathew.png" class="friends img-responsive" data-state="unclicked"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/mike.png" class="friends img-responsive" data-state="unclicked"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/paul.png" class="friends img-responsive" data-state="unclicked"></div>
      
-      <div class="col-xs-6 col-sm-3 col-md-2 col-md-offset-1"><img src="friendImages/rolando.png" class="friends img-responsive"></div>
-      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/sean.png" class="friends img-responsive"></div>
-      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/shamoon.png" class="friends img-responsive"></div>
-      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/valdrin.png" class="friends img-responsive"></div>
-      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/victor.png" class="friends img-responsive"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2 col-md-offset-1"><img src="friendImages/rolando.png" class="friends img-responsive" data-state="unclicked"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/sean.png" class="friends img-responsive" data-state="unclicked"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/shamoon.png" class="friends img-responsive" data-state="unclicked"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/valdrin.png" class="friends img-responsive" data-state="unclicked"></div>
+      <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/victor.png" class="friends img-responsive" data-state="unclicked"></div>
     
   </div>
   <!-- /page content -->

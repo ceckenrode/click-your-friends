@@ -27,7 +27,8 @@ html {
   margin-top: 75px;
 }
 #faces {
-  text-align: center;}
+  text-align: center;
+  }
 
 .friends {
   width: 150px;
@@ -60,4 +61,13 @@ html {
   color: #FFFFFF;
   text-decoration: none;
 
+}
+.alert {
+  text-align: center;
+  margin-top: -30px;
+  background-color: #00616B;
+  color: #FFF9D4;
+  border: #001c1f;
+  border-radius: 0;
+  display: none;
 }

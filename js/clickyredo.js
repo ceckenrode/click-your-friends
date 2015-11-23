@@ -1,40 +1,40 @@
 $(document).ready(function() {
-  console.log("document loaded");
   var started = false;
-  console.log("started");
-  var score = 0;
-  var friends = $(".friends");
-  var startButton = $("#start");
-  console.log(friends);
   var score = 0;
   var time = 20;
+  var friends = $(".friends");
+  var startButton = $("#start");
+  var scoreBoard = $("#score")
+  scoreBoard.text(score);
 
-  $(document).on('click', '#start', function(e) {
-    e.preventDefault();
-    startGame();
+  $(document).on('click', '#start', function(event) {
+    event.preventDefault();
+
+    if (started === false) {
+      startGame();
+    }
+
+  });
+
+  $(document).on('click', '.friends', function(event) {
+    event.preventDefault();
+
+    if (started === true) {
+      decider(this);
+    };
+
   });
 
 
   function startGame() {
-    if (started === false) {
-      started = true;
+    $(".friends").attr('data-state', 'unclicked');
+    started = true;
 
-      if (started === true) {
-        startButton.text("Start Timer");
-        countDown();
-      }
+    if (started === true) {
+      startButton.text("Start Timer");
+      $(".alert").slideDown(250);
+      countDown();
     }
-
-        $(".friends").click(function() {
-          
-          if ($(this).hasClass('clicked')) {
-            penalty();
-            return;
-          }
-          
-          $(this).addClass('clicked');
-          increaseScore();
-        });
   };
 
   function countDown() {
@@ -57,30 +57,40 @@ $(document).ready(function() {
       startButton.text("Play Again?");
       started = false;
       time = 20;
-      reIntialize();
-      return;
+      reIntialize();;
     }
+  }
 
+  function decider(friend) {
+    if ($(friend).attr('data-state') === "unclicked") {
+      increaseScore();
+      $(friend).attr('data-state', 'clicked');
+    } else if ($(friend).attr('data-state') === "clicked") {
+      penalty();
+    }
   }
 
   function reIntialize() {
 
     score = 0
-    $(".friends").removeClass('clicked');
-
+    $(".friends").attr('data-state', 'unclicked');
+    time = 20;
+    scoreBoard.text(0);
   }
 
   function increaseScore() {
     score++
-    console.log(score);
+    scoreBoard.text(score);
   }
 
   function penalty() {
     if (time > 3) {
 
       time -= 3;
-    } 
-     $(".friends").effect( "shake", {times:2}, 500 );
+    }
+    $(".friends").effect("shake", {
+      times: 2
+    }, 500);
   }
 
 });
