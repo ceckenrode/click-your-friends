@@ -1,13 +1,12 @@
 /* Adding a click event event listener to the start button that calls the startGame function
    declaring and intializing the started variable as false. Setting the variable elem to an array
    returned by document.getElementsByClassName("friends"). Then intializing the score to be 0. */
-
-document.getElementById("start").addEventListener("click", startGame);
 var started = false;
 var elem = document.getElementById("start");
 var score = 0;
 var friends = document.getElementsByClassName("friends");
 var score = 0;
+document.getElementById("start").addEventListener("click", startGame);
 //------------------------/endOf-Global Variables--------------------------------------------------------------
 
 
@@ -37,12 +36,13 @@ function startGame() {
 
 function countDown() {
   if (elem.text === "Start Timer") {
-    elem.style.color = "#02E148";
+    elem.style.color =  "#02E148";
     elem.text = "20";
     setTimeout("countDown()", 1000);
   } else if (elem.text > 0) {
     elem.text--;
     setTimeout("countDown()", 1000);
+  }
     if (elem.text < 15 && elem.text > 10) {
       elem.style.color = "#E56414";
     } else if (elem.text < 6) {
@@ -54,6 +54,7 @@ function countDown() {
     started = false;
     alert("Your Score is " + score);
     reInitialize();
+    started = false;
   }
 }
 //-----------------/endOf-countDown()---------------------------------------------------------------------------
