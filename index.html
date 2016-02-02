@@ -1,106 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://use.fonticons.com/730efa49.js"></script>
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Click Your Friends!</title>
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://use.fonticons.com/730efa49.js"></script>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Click Your Friends!</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head>
+  </head>
 
-<body>
-  <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Click Your Friends</a>
+  <body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Click Your Friends</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
       </div>
-      <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+    </nav>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Start the timer and see how many friends you can click in 20 seconds!</h1>
+        <h3>(You only get points for individual clicks and you lose 3 seconds for clicking someone twice!)</h3>
+        <p><a class="btn btn-primary btn-lg" role="button" id="start">Start Timer</a></p>
       </div>
-      <!--/.nav-collapse -->
     </div>
-  </nav>
-
-  <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="jumbotron">
-    <div class="container">
-      <h1>Start the timer and see how many friends you can click in 20 seconds!</h1>
-      <h3>(You only get points for individual clicks and you lose 3 seconds for clicking someone twice!)</h3>
-      <p><a class="btn btn-primary btn-lg" role="button" id="start">Start Timer</a></p>
-    </div>
-  </div>
-  <div class="alert alert-success">
-  <h4>
+    <div class="alert alert-success">
+      <h4>
   <strong>Score: <span id="score"></span> </strong>
   </h4>
-</div>
-
-  <!-- Begin page content -->
-  <div class="container" id="faces">
-    
+    </div>
+    <!-- Begin page content -->
+    <div class="container" id="faces">
       <div class="col-xs-6 col-sm-3 col-xs-6 col-sm-3 col-md-2 col-md-offset-1 col"><img src="friendImages/albert.png" class="friends img-responsive" data-state="unclicked"></div>
       <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/alex.png" class="friends img-responsive" data-state="unclicked"></div>
       <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/carolyn.png" class="friends img-responsive" data-state="unclicked"></div>
       <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/cb.png" class="friends img-responsive" data-state="unclicked"></div>
       <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/chrisC.png" class="friends img-responsive" data-state="unclicked"></div>
-     
       <div class="col-xs-6 col-sm-3 col-md-2 col-md-offset-1"><img src="friendImages/chrisD.png" class="friends img-responsive" data-state="unclicked"></div>
       <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/dan.png" class="friends img-responsive" data-state="unclicked"></div>
       <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/danV.png" class="friends img-responsive" data-state="unclicked"></div>
       <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/darryl.png" class="friends img-responsive" data-state="unclicked"></div>
       <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/james.png" class="friends img-responsive" data-state="unclicked"></div>
-      
       <div class="col-xs-6 col-sm-3 col-md-2 col-md-offset-1"><img src="friendImages/jed.png" class="friends img-responsive" data-state="unclicked"></div>
       <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/jeremy.png" class="friends img-responsive" data-state="unclicked"></div>
       <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/mathew.png" class="friends img-responsive" data-state="unclicked"></div>
       <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/mike.png" class="friends img-responsive" data-state="unclicked"></div>
       <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/paul.png" class="friends img-responsive" data-state="unclicked"></div>
-     
       <div class="col-xs-6 col-sm-3 col-md-2 col-md-offset-1"><img src="friendImages/rolando.png" class="friends img-responsive" data-state="unclicked"></div>
       <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/sean.png" class="friends img-responsive" data-state="unclicked"></div>
       <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/shamoon.png" class="friends img-responsive" data-state="unclicked"></div>
       <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/valdrin.png" class="friends img-responsive" data-state="unclicked"></div>
       <div class="col-xs-6 col-sm-3 col-md-2"><img src="friendImages/victor.png" class="friends img-responsive" data-state="unclicked"></div>
-    
-  </div>
-  <!-- /page content -->
-
-  <!-- Begin footer -->
-  <footer class="footer">
-    <div class="container">
-      <p class="footerText"><a href="#">&copy; 2015 Christian Eckenrode</a> &nbsp <a href="https://twitter.com/cseckenrode"><i class="icon icon-twitter"></i></a>&nbsp <a href="https://www.linkedin.com/in/christian-eckenrode-495920b9"><i class="icon icon-linkedin"></i></a>&nbsp <a href="https://github.com/ceckenrode"><i class="icon icon-github"></i></a>&nbsp <a href="http://stackoverflow.com/users/5179478/ceckenrode"><i class="icon icon-stack-overflow"></i></a></p>
     </div>
-  </footer>
-  <!-- /footer -->
-
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
-  <script src="js/clickyredo.js"></script>
-</body>
+    <!-- /page content -->
+    <!-- Begin footer -->
+    <footer class="footer">
+      <div class="container">
+        <p class="footerText"><a href="#">&copy; 2015 Christian Eckenrode</a> &nbsp <a href="https://twitter.com/cseckenrode"><i class="icon icon-twitter"></i></a>&nbsp <a href="https://www.linkedin.com/in/christian-eckenrode-495920b9"><i class="icon icon-linkedin"></i></a>&nbsp <a href="https://github.com/ceckenrode"><i class="icon icon-github"></i></a>&nbsp <a href="http://stackoverflow.com/users/5179478/ceckenrode"><i class="icon icon-stack-overflow"></i></a></p>
+      </div>
+    </footer>
+    <!-- /footer -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+    <script src="js/clickyredo.js"></script>
+    <script type="text/javascript" src='js/bootbox.min.js'></script>
+  </body>
 
 </html>
